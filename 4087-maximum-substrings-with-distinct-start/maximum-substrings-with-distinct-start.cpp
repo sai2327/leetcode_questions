@@ -1,11 +1,12 @@
 class Solution {
 public:
     int maxDistinct(string s) {
-        unordered_set<char>s1;
-        for(auto &i:s)
-        {
-            s1.insert(i);
+        vector<bool>a(26,false);
+        for(char i:s){
+            if(!a[i-'a'])a[i-'a']=true;
         }
-        return s1.size();
+        int cnt=0;
+        for(auto i:a) if(i) cnt++;
+        return cnt;
     }
 };
