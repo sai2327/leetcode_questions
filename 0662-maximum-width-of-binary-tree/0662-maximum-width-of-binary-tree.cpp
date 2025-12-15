@@ -22,7 +22,7 @@ public:
             res=max(res,end-start+1);
             for(int i=0;i<size;i++){
                 auto p=q.front();
-                int idx=p.second-start;
+                int idx=p.second;
                 q.pop();
                 if(p.first->left) q.push({p.first->left,(long long)2*(idx)+1});
                 if(p.first->right) q.push({p.first->right,(long long)2*(idx)+2});
