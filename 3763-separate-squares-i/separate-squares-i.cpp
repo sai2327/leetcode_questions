@@ -18,7 +18,7 @@ public:
             high=max(high,(double)(s[1]+s[2]));
             total+=1.0*s[2]*s[2];
         }
-        for(int i=0;i<100;i++){
+        while(high-low>1e-5){
             double mid=(low+high)/2;
             if(areabelow(mid,squares)*2<total) low=mid;
             else high=mid;
