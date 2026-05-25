@@ -9,7 +9,7 @@ public:
             if(i-minJump>=0 and dp[i-minJump]) temp++;
             if(i-maxJump-1>=0 and dp[i-maxJump-1]) temp--;
             dp[i]=(temp>0 and s[i]=='0');
-            cout<<dp[i]<<" ";
+           
         }
         return dp[s.size()-1];
     }
