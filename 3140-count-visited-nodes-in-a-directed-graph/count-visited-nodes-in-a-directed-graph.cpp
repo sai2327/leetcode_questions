@@ -39,7 +39,7 @@ public:
             }
 
         }
-        for(int i=0;i<n;i++) cout<<res[i]<<" ";
+        //for(int i=0;i<n;i++) cout<<res[i]<<" ";
         for(int i=0;i<n;i++){
             if(res[i]==0){
                 dfs(i,edges,res);
