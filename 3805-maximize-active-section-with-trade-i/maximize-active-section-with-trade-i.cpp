@@ -5,12 +5,10 @@ public:
         int ones=0;
         s='1'+s+'1';
         // cout<<s;
-        for(char c:s){
-            if(c=='1')ones++;
-        }
         int cnt=0,n=s.size();
         for(int i=0;i<n;i++){
             cnt++;
+            if(s[i]=='1')ones++;
             if(i==n-1 or s[i]!=s[i+1]){
                 if (s[i]=='0'){
                     a.push_back(-1*cnt);
