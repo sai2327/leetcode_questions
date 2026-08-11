@@ -17,7 +17,7 @@ public:
         vector<int>primes;
         vector<int>spf(1e5+1,0);
         linear_sieve(spf,primes);
-        set<int>st;
+        unordered_set<int>st;
         for(int i=0;i<nums.size();i++){
             while(nums[i]>1){
                 int p=spf[nums[i]];
