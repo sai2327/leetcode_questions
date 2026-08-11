@@ -1,9 +1,8 @@
 class Solution {
 public:
     
-    vector<int>primes;
-    void linear_sieve(vector<int>&spf){
-
+    
+    void linear_sieve(vector<int>&spf,vector<int>&primes){
         for(int i=2;i<=1e5;i++){
             if(spf[i]==0){
                 spf[i]=i;
@@ -15,8 +14,9 @@ public:
         }
     }
     int distinctPrimeFactors(vector<int>& nums) {
+        vector<int>primes;
         vector<int>spf(1e5+1,0);
-        linear_sieve(spf);
+        linear_sieve(spf,primes);
         set<int>st;
         for(int i=0;i<nums.size();i++){
             while(nums[i]>1){
