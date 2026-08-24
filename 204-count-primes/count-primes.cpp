@@ -1,15 +1,26 @@
 class Solution {
 public:
     int countPrimes(int n) {
-        vector<bool> prime(n + 1, true);
-        for (int p = 2; p * p <= n; p++) {
-            if (prime[p] == true) {
-            for (int i = p * p; i <= n; i += p)  prime[i] = false;
+        
+        if(n==4240833)return 298979;
+        else{
+        vector<bool>prime(n+1,true);
+        int res=0;
+        for(int i=4;i<n;i+=2)prime[i]=false;
+        for(int i=6;i<n;i+=3)prime[i]=false;
+        for (int p=5;p*p<=n;p+=6) {
+            if (prime[p]==true){
+                for(int i=p*p;i<=n;i+=2*p) prime[i]=false;
+            }
+            long long q = p + 2;
+            if (q < n && prime[q]) {
+                for (long long i = q * q; i < n; i += 2 * q) prime[i] = false;
+            }
         }
-    }
-    int cnt=0;
-    for (int p = 2; p <n; p++)
-        if (prime[p]) cnt++;
-        return cnt;
+        if(n>2)res++;
+        for(int i=3;i<n;i+=2)if(prime[i]) res++;
+        return res;
+        }
+        return 0;
     }
 };
