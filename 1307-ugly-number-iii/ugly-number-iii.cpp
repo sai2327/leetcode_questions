@@ -1,7 +1,7 @@
 class Solution {
 public:
     long long lcm(long long x,long long y) {
-        return (x*y)/std::gcd(x, y);
+        return (x*y)/gcd(x, y);
     }
     int nthUglyNumber(int n, int a, int b, int c) {
         long long low=1,high=2e9;
